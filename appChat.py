@@ -23,9 +23,15 @@ def simple_tokenize(text):
         return []
     return re.findall(r'\w+', text.lower())
 
+from nltk.stem import WordNetLemmatizer
+lemmatizer = WordNetLemmatizer()
 @st.cache_data(show_spinner=False)
+# def simple_lemmatize(word):
+#     return word[:-1] if word.endswith('s') else word
+
 def simple_lemmatize(word):
-    return word[:-1] if word.endswith('s') else word
+    return lemmatizer.lemmatize(word)
+
 
 @st.cache_data(show_spinner=False)
 def load_chat_history():
