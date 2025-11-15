@@ -3,4 +3,5 @@ nltk
 tensorflow
 numpy
 streamlit_lottie
-
+scikit-learn
+pandas
